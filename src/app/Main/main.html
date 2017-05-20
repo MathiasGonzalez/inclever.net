@@ -1,0 +1,30 @@
+﻿<md-tab-group>
+    <md-tab label="Tab 1">
+        <div>
+            <button md-raised-button (click)="cambiarBackend()">Cambiar</button> Desde {{ selectedBackend }}
+            <button md-raised-button (click)="cambiarBackend2()">Cambiar 2</button> Desde {{ selectedBackend }}
+            <button md-raised-button (click)="testGenericGet()">testGenericGet</button>
+            <button md-raised-button>testGenericPost</button>
+        </div>
+         <button md-button (click)="clicked($event)">lista main</button>
+        <md-progress-bar mode="indeterminate" (click)="barClick()"></md-progress-bar>
+        <h4>{{ items?.length }}</h4>
+        <div class="grid" >     
+            <md-card class="grid-item"  *ngFor="let item of items" class="device-row">
+                <md-input-container>
+                    <input mdInput placeholder="Descripción" value="{{item?.Description}}">
+                </md-input-container>
+                <md-slide-toggle [checked]="!!item?.Description" #check></md-slide-toggle>
+                <md-spinner *ngIf="check?.checked" #spinner></md-spinner>
+                <codigo [codigo]="codigo"></codigo>
+                <md-progress-bar  *ngIf="!check?.checked" mode="indeterminate"></md-progress-bar>            
+            </md-card>          
+        </div>
+    </md-tab>
+    <md-tab label="Tab 2">Content 2</md-tab>
+</md-tab-group>
+<md-input-container>
+    <input mdInput placeholder="Descripción">
+</md-input-container>
+
+

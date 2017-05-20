@@ -1,0 +1,10 @@
+ <button md-button (click)="clicked($event)">Detalle</button>
+<md-progress-bar mode="indeterminate" ></md-progress-bar>
+ <md-card >
+        <!--<md-input-container>
+            <input md-input placeholder="Descripción" value="dfghdfgh">
+        </md-input-container>-->
+        <md-slide-toggle [checked]="true" #check></md-slide-toggle>
+        <md-spinner *ngIf="check?.checked" #spinner></md-spinner>
+        <md-progress-bar  *ngIf="!check?.checked" mode="indeterminate"></md-progress-bar>            
+</md-card>  

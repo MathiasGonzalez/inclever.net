@@ -1,0 +1,22 @@
+﻿<!--
+<nav-bar (inputChange)="catchNavBarInputChange($event)" ></nav-bar>
+
+<div class="row" style="margin-top:59px; height:100%;">  
+   <side-bar id="xide" class=" col col-sm-2 hidden-xs">
+    </side-bar>
+    <div class="col col-sm-8">
+        <contenedor></contenedor>
+    </div>
+    <div class="col col-sm-1">
+        <img style="margin-top:10px;" class="sombra" src="" alt="BANNER">
+        <input type="file">
+    </div>
+</div>
+-->
+<h5 *ngIf="contenedor?.showTitle">Xemon Web</h5>
+<!--<div class="grid" [ngGrid]="{'max_cols': 6, 'auto_resize': true}">
+	<div class="grid-item" [ngGridItem]="{'sizex': 3, 'sizey': 3}">-->
+        <contenedor #contenedor></contenedor>
+	<!--</div>	
+</div>-->
+<!--<contenedor></contenedor>-->

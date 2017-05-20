@@ -1,0 +1,18 @@
+<div [ngClass]="{'contenedor-marco' : showBorder}">
+    <router-outlet></router-outlet>
+</div>
+<footer #footer>
+    <div>
+        <span>Query Values</span>
+        <div> {{ params | json }}</div>
+        <md-card *ngFor="let prop of queryStringProperties">
+            {{ prop + ' ' + getParamValue(prop) }}
+        </md-card>
+    </div>
+</footer>
+<button md-raised-button (click)="showSideNav()">Side Nav</button>
+<md-sidenav-container>
+    <md-sidenav #sidenav [mode]="'side'">
+        <div>SIDE</div>
+    </md-sidenav>
+</md-sidenav-container>

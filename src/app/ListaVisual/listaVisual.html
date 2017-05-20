@@ -1,0 +1,19 @@
+<md-tab-group>
+    <md-tab label="Tab 1">     
+        <div class="grid">     
+            <md-card class="grid-item" *ngFor="let item of items" class="device-row">
+                <div>
+                    <img src="{{icon(item)}}" alt="icon">
+                </div>
+                <md-input-container>
+                    <input md-input placeholder="Descripción" value="{{item?.Description}}">
+                </md-input-container>
+                <codigo [codigo]="_codigo"></codigo>
+                <md-slide-toggle [checked]="!item?.Description" #check></md-slide-toggle>
+                <md-spinner *ngIf="check?.checked" #spinner></md-spinner>
+                <md-progress-bar  *ngIf="!check?.checked" mode="indeterminate"></md-progress-bar>            
+            </md-card>          
+        </div>
+    </md-tab>
+    <md-tab label="Tab 2">Content 2</md-tab>
+</md-tab-group>
